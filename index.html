@@ -6,18 +6,19 @@
 
   <!-- ===== Basic SEO ===== -->
   <title>Ruby's Coffee Shop | Coffee &amp; Bar on Partington Lane, Swinton</title>
-  <meta name="description" content="Ruby's is a cosy independent coffee shop and bar at 125 Partington Lane, Swinton. Coffee, breakfast, sandwiches and toasties by day; drinks with friends Friday to Sunday evenings.">
+  <meta name="description" content="Ruby's is a cosy independent coffee shop and bar at 125 Partington Lane, Swinton, M27 0NS. Coffee, breakfast, sandwiches and toasties by day; drinks with friends Friday to Sunday evenings.">
   <meta name="theme-color" content="#7a0001">
-  <!-- TODO: replace rubyscoffeeshop.example with the real domain once you have one -->
-  <link rel="canonical" href="https://www.rubyscoffeeshop.example/">
+  <!-- If Ruby's gets its own domain, update these URLs (canonical, og:url, og:image, schema) -->
+  <link rel="canonical" href="https://james431256.github.io/coffee-shop-test/">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
   <!-- ===== Open Graph / social sharing ===== -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ruby's Coffee Shop &amp; Bar, Swinton">
   <meta property="og:description" content="Coffee by day, drinks by night. Find us at 125 Partington Lane, Swinton.">
-  <meta property="og:url" content="https://www.rubyscoffeeshop.example/">
-  <meta property="og:image" content="https://www.rubyscoffeeshop.example/images/og-image.jpg">
+  <meta property="og:url" content="https://james431256.github.io/coffee-shop-test/">
+  <meta property="og:image" content="https://james431256.github.io/coffee-shop-test/images/shop-window.jpg">
+  <meta property="og:image:alt" content="The Ruby's sign in the shop window on Partington Lane">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -37,14 +38,17 @@
     "@type": ["CafeOrCoffeeShop", "BarOrPub"],
     "name": "Ruby's Coffee Shop",
     "description": "An independent coffee shop and bar in Swinton serving coffee, breakfast, sandwiches, toasties and salads, with the bar open Friday to Sunday evenings.",
-    "url": "https://www.rubyscoffeeshop.example/",
-    "image": "https://www.rubyscoffeeshop.example/images/og-image.jpg",
+    "url": "https://james431256.github.io/coffee-shop-test/",
+    "image": "https://james431256.github.io/coffee-shop-test/images/shop-window.jpg",
     "priceRange": "£",
-    "servesCuisine": ["Coffee", "Breakfast", "Sandwiches", "Salads"],
+    "servesCuisine": ["Coffee", "Breakfast", "Sandwiches", "Salads", "Cakes"],
+    "currenciesAccepted": "GBP",
+    "hasMenu": "https://james431256.github.io/coffee-shop-test/#menu",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "125 Partington Lane",
       "addressLocality": "Swinton",
+      "postalCode": "M27 0NS",
       "addressRegion": "Greater Manchester",
       "addressCountry": "GB"
     },
@@ -123,18 +127,21 @@
     <!-- ================= 2. About ================= -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about__grid">
-        <div class="photo-placeholder about__photo reveal" role="img" aria-label="Placeholder: the inside of Ruby's on Partington Lane">
-          <span>Photo of the shop</span>
-        </div>
+        <figure class="about__photo reveal">
+          <img src="images/shop-window.jpg" width="1179" height="1464" loading="lazy"
+               alt="Big red RUBY'S lettering on the shop window, with white tables and chairs, framed prints and an OPEN chalkboard inside">
+        </figure>
         <div class="about__text reveal">
           <p class="eyebrow">Our story</p>
           <h2 id="about-title">Your new local, on Partington Lane</h2>
           <!-- TODO: add who runs Ruby's and the story behind the name -->
           <p>Ruby's opened its doors in summer 2026 with one simple aim: give Swinton a friendly little place to grab a proper coffee, sit down for a bite, and catch up with friends at the end of the week.</p>
-          <p>By day we're a coffee shop, pouring lattes and flat whites, toasting bagels and crumpets, and making sandwiches and toasties to order. From Friday afternoon the lights go down and Ruby's becomes a cosy bar for the weekend.</p>
+          <p>By day we're a coffee shop, pouring lattes and flat whites, toasting bagels and crumpets, and making buttys and toasties to order. There's always something sweet on the counter too, from Biscoff croissants to Bueno brownies. From Friday afternoon the lights go down and Ruby's becomes a cosy bar for the weekend.</p>
+          <p>Inside you'll find a wall of gold-framed prints (hello, Debbie Harry), a disco ball over the naughty corner, a chalkboard wall covered in doodles, and a playlist we're very proud of. Fancy something that's not on the menu? Just ask. Your wish is our command.</p>
           <ul class="about__points">
             <li>Coffee shop Tuesday to Friday, breakfast served all day</li>
             <li>Bar open Friday, Saturday and Sunday evenings</li>
+            <li>Loyalty card: your 8th coffee is on us</li>
             <li>Oat, almond and soy milk, plus vegan cheese on request</li>
           </ul>
         </div>
@@ -246,7 +253,8 @@
           </div>
         </div>
 
-        <p class="menu__footnote">Please tell us about any allergies. We're happy to help.</p>
+        <p class="menu__footnote">Plus homemade sweet treats on the counter. See <a href="https://www.instagram.com/rubyscoffeeshop/" target="_blank" rel="noopener">our Instagram<span class="visually-hidden"> (opens in a new tab)</span></a> for what's in today.<br>
+          Ask for a loyalty card: your 8th coffee is on us. Please tell us about any allergies.</p>
       </div>
     </section>
 
@@ -257,14 +265,31 @@
           <p class="eyebrow">A peek inside</p>
           <h2 id="gallery-title">Life at Ruby's</h2>
         </header>
-        <!-- Replace each placeholder with <img src="images/..." alt="..." loading="lazy" width="..." height="..."> -->
         <ul class="gallery__grid">
-          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: a flat white with latte art"><span>Flat white</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: the counter at Ruby's"><span>The counter</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: a chorizo and brie toastie"><span>Toasties</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: an iced coffee"><span>Iced coffee</span></li>
-          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: the bar on a Friday evening"><span>Friday nights</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: the shop front on Partington Lane"><span>The shop front</span></li>
+          <li class="gallery__item gallery__item--tall reveal">
+            <img src="images/naughty-corner.jpg" width="1179" height="1179" loading="lazy"
+                 alt="The cosy naughty corner: cushioned bench seating under a disco ball, beside a chalkboard wall doodled with RUBY'S, suns, stars and ladybirds">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="images/biscoff-croissants.jpg" width="1179" height="1167" loading="lazy"
+                 alt="Croissants drizzled with Biscoff spread and topped with crushed Biscoff biscuits">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="images/bueno-brownies.jpg" width="1179" height="1166" loading="lazy"
+                 alt="Chocolate brownies topped with Kinder Bueno pieces on a wooden board">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="images/loyalty-cards.jpg" width="1179" height="1170" loading="lazy"
+                 alt="Red Ruby's loyalty cards reading: your 8th coffee is on us">
+          </li>
+          <li class="gallery__item gallery__item--tall reveal">
+            <img src="images/cajun-salad.jpg" width="1022" height="1167" loading="lazy"
+                 alt="A Cajun chicken salad bowl next to the Ruby's salads menu">
+          </li>
+          <li class="gallery__item reveal">
+            <img src="images/gallery-wall.jpg" width="1179" height="964" loading="lazy"
+                 alt="A wall of gold-framed prints including a Blondie poster, a ladybird and a carousel, with sunburst mirrors">
+          </li>
         </ul>
       </div>
     </section>
@@ -296,14 +321,14 @@
           <address class="visit__address">
             <strong>Ruby's Coffee Shop</strong><br>
             125 Partington Lane<br>
-            Swinton
-            <!-- TODO: add postcode above, and phone number here, e.g.
-                 <br><a href="tel:+44161XXXXXXX">0161 XXX XXXX</a>
-                 (also add "telephone" to the schema in <head>) -->
+            Swinton, Manchester<br>
+            M27 0NS
+            <!-- To add a phone number: <br><a href="tel:+44161XXXXXXX">0161 XXX XXXX</a>
+                 (and add "telephone" to the schema in <head>) -->
           </address>
           <p class="visit__contact">Got a question? Message us on <a href="https://www.instagram.com/rubyscoffeeshop/" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
 
-          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=125+Partington+Lane,+Swinton" target="_blank" rel="noopener">
+          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=125+Partington+Lane,+Swinton,+M27+0NS" target="_blank" rel="noopener">
             Get directions<span class="visually-hidden"> (opens Google Maps in a new tab)</span>
           </a>
         </div>
@@ -311,8 +336,8 @@
         <!-- Embedded Google Map (no API key needed) -->
         <div class="map reveal">
           <iframe
-            title="Map showing Ruby's Coffee Shop, 125 Partington Lane, Swinton"
-            src="https://www.google.com/maps?q=125+Partington+Lane,+Swinton&amp;output=embed"
+            title="Map showing Ruby's Coffee Shop, 125 Partington Lane, Swinton, M27 0NS"
+            src="https://www.google.com/maps?q=125+Partington+Lane,+Swinton,+M27+0NS&amp;output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -382,7 +407,7 @@
     <div class="container footer__grid">
       <div>
         <p class="footer__logo">Ruby’s</p>
-        <p>125 Partington Lane, Swinton</p>
+        <p>125 Partington Lane<br>Swinton, Manchester M27 0NS</p>
       </div>
       <div>
         <h2 class="footer__heading">Coffee shop</h2>
