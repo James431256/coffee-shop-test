@@ -8,9 +8,9 @@
 /* ---------- 1. Design tokens ---------- */
 :root {
   /* Colours (all text/background pairs meet WCAG AA contrast) */
-  --ruby: #7b100c;          /* brand red */
-  --ruby-dark: #5c0a07;
-  --ruby-deep: #3d0705;     /* footer */
+  --ruby: #7a0001;          /* brand red */
+  --ruby-dark: #5a0001;
+  --ruby-deep: #3a0001;     /* footer */
   --cream: #f5e6c8;         /* logo cream, used on red */
   --paper: #fcf9f4;         /* page background, like the printed menus */
   --linen: #f4ece0;         /* alternate section background */
@@ -24,8 +24,8 @@
   --font-body: "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --radius: 10px;
-  --shadow: 0 6px 20px rgba(61, 7, 5, 0.07);
-  --shadow-lift: 0 14px 30px rgba(61, 7, 5, 0.16);
+  --shadow: 0 6px 20px rgba(58, 0, 1, 0.07);
+  --shadow-lift: 0 14px 30px rgba(58, 0, 1, 0.16);
   --nav-h: 68px;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -162,7 +162,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-radius: var(--radius);
   background:
     radial-gradient(circle at 30% 25%, rgba(245, 230, 200, 0.25), transparent 60%),
-    linear-gradient(135deg, #9b2a1f, var(--ruby-dark));
+    linear-gradient(135deg, #9a1416, var(--ruby-dark));
 }
 .photo-placeholder span {
   margin: 0.75rem;
@@ -212,7 +212,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   -webkit-backdrop-filter: blur(8px);
   transition: box-shadow 0.3s;
 }
-.site-header.is-scrolled { box-shadow: 0 2px 16px rgba(61, 7, 5, 0.1); }
+.site-header.is-scrolled { box-shadow: 0 2px 16px rgba(58, 0, 1, 0.1); }
 
 .nav {
   display: flex;
@@ -280,7 +280,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   flex-direction: column;
   padding: 0.5rem 1.25rem 1.5rem;
   background: var(--paper);
-  box-shadow: 0 12px 20px rgba(61, 7, 5, 0.1);
+  box-shadow: 0 12px 20px rgba(58, 0, 1, 0.1);
   transform: translateY(-8px);
   opacity: 0;
   visibility: hidden;
@@ -322,7 +322,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 50% 35%, #8f1712 0%, transparent 65%),
+    radial-gradient(ellipse at 50% 35%, #8e0b0c 0%, transparent 65%),
     var(--ruby);
 }
 
@@ -501,9 +501,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* Vary placeholder tones so the grid doesn't look flat */
 .gallery__item:nth-child(2) { background: linear-gradient(135deg, #e9d8b8, #cdb48c); }
-.gallery__item:nth-child(3) { background: linear-gradient(135deg, #7b100c, #3d0705); }
+.gallery__item:nth-child(3) { background: linear-gradient(135deg, #7a0001, #3a0001); }
 .gallery__item:nth-child(4) { background: linear-gradient(135deg, #5d7a72, #2c4741); }
-.gallery__item:nth-child(5) { background: linear-gradient(135deg, #4a0b08, #1f0503); }
+.gallery__item:nth-child(5) { background: linear-gradient(135deg, #4d0001, #1f0001); }
 .gallery__item:nth-child(6) { background: linear-gradient(135deg, #f1e3c8, #d7bf96); }
 
 /* ---------- 9. Visit (hours + location) ---------- */
@@ -534,7 +534,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hours .is-shut { color: var(--muted); }
 
 /* Highlight today's row (class added by JS) */
-.hours tr.is-today { background: rgba(123, 16, 12, 0.07); }
+.hours tr.is-today { background: rgba(122, 0, 1, 0.07); }
 .hours tr.is-today th,
 .hours tr.is-today td { font-weight: 600; color: var(--ruby); }
 
