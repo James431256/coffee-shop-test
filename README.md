@@ -26,7 +26,5 @@ Opening times appear in four places, which must match:
 - **Photos:** the about photo and six gallery tiles are placeholders. Use real `<img>` tags with `alt`, `width`, `height` and `loading="lazy"`. The hero can take a photo too (see `.hero__bg`).
 - **Reviews:** the three reviews are placeholders. Swap in real customer quotes, with permission.
 - **About text:** add who runs Ruby's and the story behind the name.
-- **Facebook link:** assumed to be `facebook.com/rubyscoffeeshop`. Check it's correct, or remove it.
 - **Domain:** replace `rubyscoffeeshop.example` in the canonical, Open Graph and schema URLs, and add an `images/og-image.jpg` (1200×630) for link previews.
 - **Newsletter:** front-end only. Point the form at Mailchimp, Buttondown, etc.
-- **Bar menu:** not included yet. Add a tab if you have one.
