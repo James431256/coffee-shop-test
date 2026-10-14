@@ -9,17 +9,22 @@
   /* ------------------------------------------------------------------
      Opening hours: the single source of truth for the "Open now" badge.
      Keys are JS day numbers (0 = Sunday … 6 = Saturday).
-     Times are 24h "HH:MM". Use null for a closed day.
-     Keep in sync with the hours table and schema in index.html.
+     Each day lists its sessions in time order (24h "HH:MM").
+     An empty list means closed all day.
+     Keep in sync with the hours table, footer and schema in index.html.
      ------------------------------------------------------------------ */
+  var COFFEE = "Coffee shop";
+  var BAR = "Bar";
+
   var OPENING_HOURS = {
-    0: { open: "09:30", close: "15:00" },
-    1: { open: "07:30", close: "17:00" },
-    2: { open: "07:30", close: "17:00" },
-    3: { open: "07:30", close: "17:00" },
-    4: { open: "07:30", close: "17:00" },
-    5: { open: "07:30", close: "17:00" },
-    6: { open: "08:30", close: "17:00" }
+    0: [{ name: BAR, open: "15:00", close: "21:00" }],
+    1: [],
+    2: [{ name: COFFEE, open: "08:00", close: "16:00" }],
+    3: [{ name: COFFEE, open: "08:00", close: "16:00" }],
+    4: [{ name: COFFEE, open: "08:00", close: "16:00" }],
+    5: [{ name: COFFEE, open: "08:00", close: "14:00" },
+        { name: BAR, open: "16:00", close: "22:00" }],
+    6: [{ name: BAR, open: "16:00", close: "22:00" }]
   };
 
   // The shop's own time zone, so visitors elsewhere still see the right status.
@@ -74,30 +79,41 @@
     if (!badges.length) return;
 
     var now = shopNow();
-    var today = OPENING_HOURS[now.day];
-    var isOpen = !!today &&
-      now.minutes >= toMinutes(today.open) &&
-      now.minutes < toMinutes(today.close);
+    var sessions = OPENING_HOURS[now.day] || [];
+
+    // Is a session running right now?
+    var current = sessions.find(function (s) {
+      return now.minutes >= toMinutes(s.open) && now.minutes < toMinutes(s.close);
+    });
+    var isOpen = !!current;
 
     var text;
-    if (isOpen) {
-      text = "Open now · until " + formatTime(today.close);
-    } else if (today && now.minutes < toMinutes(today.open)) {
-      text = "Closed · opens " + formatTime(today.open) + " today";
+    if (current) {
+      text = current.name + " open now · until " + formatTime(current.close);
     } else {
-      // Find the next day we're open
-      for (var i = 1; i <= 7; i++) {
-        var d = (now.day + i) % 7;
-        if (OPENING_HOURS[d]) {
-          var when = i === 1 ? "tomorrow" : DAY_NAMES[d];
-          text = "Closed · opens " + formatTime(OPENING_HOURS[d].open) + " " + when;
-          break;
+      // Otherwise find the next session: later today first, then following days
+      var next = null;
+      var when = "";
+      var later = sessions.find(function (s) { return now.minutes < toMinutes(s.open); });
+      if (later) {
+        next = later;
+        when = "today";
+      } else {
+        for (var i = 1; i <= 7 && !next; i++) {
+          var d = (now.day + i) % 7;
+          if (OPENING_HOURS[d] && OPENING_HOURS[d].length) {
+            next = OPENING_HOURS[d][0];
+            when = i === 1 ? "tomorrow" : DAY_NAMES[d];
+          }
         }
       }
+      text = next
+        ? "Closed · " + next.name.toLowerCase() + " opens " + formatTime(next.open) + " " + when
+        : "Closed";
     }
 
     badges.forEach(function (badge) {
-      badge.textContent = text || "Closed";
+      badge.textContent = text;
       badge.classList.toggle("is-open", isOpen);
       badge.classList.toggle("is-closed", !isOpen);
     });
