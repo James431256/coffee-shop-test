@@ -1,22 +1,32 @@
 # Ruby's Coffee Shop website
 
-A responsive, single-page site for Ruby's Coffee Shop. Plain HTML, CSS and vanilla JS, with no build step.
+A responsive, single-page site for Ruby's Coffee Shop & Bar, 125 Partington Lane, Swinton.
+Plain HTML, CSS and vanilla JS, with no build step. The branding, menu and opening times come from [@rubyscoffeeshop](https://www.instagram.com/rubyscoffeeshop/).
 
 ```
-index.html      markup, SEO meta, Open Graph, LocalBusiness schema
-css/styles.css  mobile-first styles (design tokens at the top)
-js/main.js      nav, menu tabs, open/closed badge, scroll animations, newsletter
+index.html          markup, SEO meta, Open Graph, LocalBusiness schema
+css/styles.css      mobile-first styles (brand colours and fonts at the top)
+js/main.js          nav, menu tabs, open/closed badge, scroll animations, newsletter
+images/favicon.svg  browser tab icon
 ```
 
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
 
-## Before going live, replace the placeholders
+## Changing opening times
 
-- **Town, address, postcode, phone:** in `index.html` (search for `Your Town`, `12 High Street`, `01234`), including the JSON-LD schema in `<head>`.
-- **Opening hours:** in three places that must match: the hours table and footer in `index.html`, the schema in `<head>`, and `OPENING_HOURS` in `js/main.js` (this drives the "Open now" badge).
-- **Domain:** `rubyscoffeeshop.example` in the canonical, Open Graph and schema URLs.
-- **Photos:** hero (`.hero__bg` in CSS), about photo, and the six gallery tiles. Use real `<img>` tags with `alt`, `width`, `height` and `loading="lazy"`.
-- **Map:** swap `.map-placeholder` for a Google Maps embed `<iframe>`.
-- **Menu, reviews and story:** placeholder copy; check prices and use real (permitted) reviews.
+Opening times appear in four places, which must match:
+1. `OPENING_HOURS` in `js/main.js` (drives the "Open now / Closed" badge)
+2. the hours table in `index.html`
+3. the footer in `index.html`
+4. `openingHoursSpecification` in the schema in `<head>`
+
+## Still to fill in before going live
+
+- **Postcode and phone number:** see the TODO in the `<address>` block, and add `telephone` to the schema.
+- **Photos:** the about photo and six gallery tiles are placeholders. Use real `<img>` tags with `alt`, `width`, `height` and `loading="lazy"`. The hero can take a photo too (see `.hero__bg`).
+- **Reviews:** the three reviews are placeholders. Swap in real customer quotes, with permission.
+- **About text:** add who runs Ruby's and the story behind the name.
+- **Facebook link:** assumed to be `facebook.com/rubyscoffeeshop`. Check it's correct, or remove it.
+- **Domain:** replace `rubyscoffeeshop.example` in the canonical, Open Graph and schema URLs, and add an `images/og-image.jpg` (1200×630) for link previews.
 - **Newsletter:** front-end only. Point the form at Mailchimp, Buttondown, etc.
-- **Facebook URL:** assumed to be `facebook.com/rubyscoffeeshop`.
+- **Bar menu:** not included yet. Add a tab if you have one.

@@ -5,25 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- ===== Basic SEO ===== -->
-  <!-- TODO: replace "Your Town" everywhere with the real town/city -->
-  <title>Ruby's Coffee Shop | Independent Café in Your Town</title>
-  <meta name="description" content="Ruby's Coffee Shop is a cosy, independent café in Your Town serving specialty coffee, loose-leaf tea, homemade cakes and fresh food. Pop in and say hello.">
-  <meta name="theme-color" content="#4a2f23">
+  <title>Ruby's Coffee Shop | Coffee &amp; Bar on Partington Lane, Swinton</title>
+  <meta name="description" content="Ruby's is a cosy independent coffee shop and bar at 125 Partington Lane, Swinton. Coffee, breakfast, sandwiches and toasties by day; drinks with friends Friday to Sunday evenings.">
+  <meta name="theme-color" content="#7b100c">
+  <!-- TODO: replace rubyscoffeeshop.example with the real domain once you have one -->
   <link rel="canonical" href="https://www.rubyscoffeeshop.example/">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
   <!-- ===== Open Graph / social sharing ===== -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ruby's Coffee Shop | Independent Café in Your Town">
-  <meta property="og:description" content="Specialty coffee, homemade cakes and a warm welcome. Your neighbourhood coffee shop.">
+  <meta property="og:title" content="Ruby's Coffee Shop &amp; Bar, Swinton">
+  <meta property="og:description" content="Coffee by day, drinks by night. Find us at 125 Partington Lane, Swinton.">
   <meta property="og:url" content="https://www.rubyscoffeeshop.example/">
   <meta property="og:image" content="https://www.rubyscoffeeshop.example/images/og-image.jpg">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ===== Fonts: Fraunces (friendly serif) + DM Sans (clean sans) ===== -->
+  <!-- ===== Fonts: Libre Caslon Text (classic serif, like the logo) + Jost (clean sans, like the menus) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
   <!-- Flag JS support early so scroll animations don't flash (content stays visible without JS) -->
@@ -33,30 +34,27 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CafeOrCoffeeShop",
+    "@type": ["CafeOrCoffeeShop", "BarOrPub"],
     "name": "Ruby's Coffee Shop",
-    "description": "A cosy, independent coffee shop serving specialty coffee, tea, homemade cakes and fresh food.",
+    "description": "An independent coffee shop and bar in Swinton serving coffee, breakfast, sandwiches, toasties and salads, with the bar open Friday to Sunday evenings.",
     "url": "https://www.rubyscoffeeshop.example/",
     "image": "https://www.rubyscoffeeshop.example/images/og-image.jpg",
-    "telephone": "+44 1234 567890",
     "priceRange": "£",
-    "servesCuisine": ["Coffee", "Cakes", "Breakfast", "Light lunch"],
+    "servesCuisine": ["Coffee", "Breakfast", "Sandwiches", "Salads"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "12 High Street",
-      "addressLocality": "Your Town",
-      "postalCode": "AB1 2CD",
+      "streetAddress": "125 Partington Lane",
+      "addressLocality": "Swinton",
+      "addressRegion": "Greater Manchester",
       "addressCountry": "GB"
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "17:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "17:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:30", "closes": "15:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "08:00", "closes": "16:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "16:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "15:00", "closes": "21:00" }
     ],
-    "sameAs": [
-      "https://www.instagram.com/rubyscoffeeshop/",
-      "https://www.facebook.com/rubyscoffeeshop"
-    ]
+    "sameAs": ["https://www.instagram.com/rubyscoffeeshop/"]
   }
   </script>
 </head>
@@ -68,7 +66,16 @@
   <!-- ================= Sticky navigation ================= -->
   <header class="site-header" id="top">
     <nav class="nav container" aria-label="Main">
-      <a class="nav__logo" href="#top">Ruby's<span class="visually-hidden"> Coffee Shop, back to top</span></a>
+      <a class="nav__logo" href="#top">
+        <!-- Round logo mark, as on the Instagram profile -->
+        <svg class="logo-mark" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="50" />
+          <path id="logo-mark-arc" d="M 16,62 A 36,36 0 0 1 84,62" fill="none" />
+          <text><textPath href="#logo-mark-arc" startOffset="50%" text-anchor="middle">RUBY’S</textPath></text>
+        </svg>
+        <span class="nav__logo-text">Ruby’s</span>
+        <span class="visually-hidden">Coffee Shop, back to top</span>
+      </a>
 
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
         <span class="nav__toggle-bar" aria-hidden="true"></span>
@@ -79,7 +86,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#visit">Visit</a></li>
+        <li><a href="#visit">Opening times</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact" class="nav__cta">Say hello</a></li>
       </ul>
@@ -88,16 +95,27 @@
 
   <main id="main">
     <!-- ================= 1. Hero ================= -->
+    <!-- Styled like the "Coming soon" post: cream arched logo on ruby red.
+         To add a photo instead, see .hero__bg in css/styles.css -->
     <section class="hero" aria-labelledby="hero-title">
-      <!-- Photo placeholder: swap the gradient for a real image in css (.hero__bg) -->
-      <div class="hero__bg" role="img" aria-label="Placeholder: the warm, sunlit interior of Ruby's with a barista pouring latte art"></div>
+      <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__content container">
-        <p class="status-badge" data-open-badge aria-live="polite">Checking hours…</p>
-        <h1 id="hero-title">Ruby's Coffee Shop</h1>
-        <p class="hero__tagline">Proper coffee, homemade cake and a warm hello, right here in Your Town.</p>
+        <p class="status-badge" data-open-badge aria-live="polite">Checking opening times…</p>
+
+        <h1 id="hero-title" class="hero__logo">
+          <span class="visually-hidden">Ruby's Coffee Shop</span>
+          <svg viewBox="0 0 600 250" aria-hidden="true">
+            <path id="hero-arc" d="M 40,240 A 300,300 0 0 1 560,240" fill="none" />
+            <text><textPath href="#hero-arc" startOffset="50%" text-anchor="middle">RUBY’S</textPath></text>
+          </svg>
+        </h1>
+
+        <p class="hero__sub"><span aria-hidden="true" class="rule"></span>Coffee shop &amp; bar<span aria-hidden="true" class="rule"></span></p>
+        <p class="hero__tagline">Coffee by day, drinks by night, on Partington Lane in Swinton.</p>
+
         <div class="hero__actions">
-          <a class="btn btn--primary" href="#menu">View Menu</a>
-          <a class="btn btn--ghost" href="#visit">Find Us</a>
+          <a class="btn btn--light" href="#menu">View Menu</a>
+          <a class="btn btn--outline" href="#visit">Find Us</a>
         </div>
       </div>
     </section>
@@ -105,18 +123,19 @@
     <!-- ================= 2. About ================= -->
     <section class="section about" id="about" aria-labelledby="about-title">
       <div class="container about__grid">
-        <div class="photo-placeholder about__photo reveal" role="img" aria-label="Placeholder: Ruby behind the counter, smiling, with the coffee machine behind her">
-          <span>Photo of Ruby</span>
+        <div class="photo-placeholder about__photo reveal" role="img" aria-label="Placeholder: the inside of Ruby's on Partington Lane">
+          <span>Photo of the shop</span>
         </div>
         <div class="about__text reveal">
           <p class="eyebrow">Our story</p>
-          <h2 id="about-title">A little shop with a big kettle</h2>
-          <p>Ruby's started with a simple idea: the town deserved somewhere to sit, slow down and drink a really good cup of coffee. What began as a secondhand espresso machine and three wobbly tables is now the place locals pop into on the way to work, on the school run, and on lazy Sunday mornings.</p>
-          <p>The shop is run by Ruby and a small team who know most regulars by name (and their order by heart). We roast-to-order with a local roaster, bake our cakes in-house every morning, and source our milk, bread and veg from producers just down the road.</p>
+          <h2 id="about-title">Your new local, on Partington Lane</h2>
+          <!-- TODO: add who runs Ruby's and the story behind the name -->
+          <p>Ruby's opened its doors in summer 2026 with one simple aim: give Swinton a friendly little place to grab a proper coffee, sit down for a bite, and catch up with friends at the end of the week.</p>
+          <p>By day we're a coffee shop, pouring lattes and flat whites, toasting bagels and crumpets, and making sandwiches and toasties to order. From Friday afternoon the lights go down and Ruby's becomes a cosy bar for the weekend.</p>
           <ul class="about__points">
-            <li>Locally roasted beans, ground fresh for every cup</li>
-            <li>Cakes baked on site every morning</li>
-            <li>Dogs, laptops, prams and muddy boots all welcome</li>
+            <li>Coffee shop Tuesday to Friday, breakfast served all day</li>
+            <li>Bar open Friday, Saturday and Sunday evenings</li>
+            <li>Oat, almond and soy milk, plus vegan cheese on request</li>
           </ul>
         </div>
       </div>
@@ -128,66 +147,106 @@
         <header class="section__head reveal">
           <p class="eyebrow">What we're serving</p>
           <h2 id="menu-title">The menu</h2>
-          <p>Oat, soy and almond milk at no extra cost. Ask us about today's specials.</p>
         </header>
 
         <!-- Accessible tabs: arrow keys move between tabs (see js/main.js) -->
         <div class="tabs reveal">
           <div class="tabs__list" role="tablist" aria-label="Menu categories">
-            <button class="tabs__tab" role="tab" id="tab-coffee" aria-controls="panel-coffee" aria-selected="true">Coffee</button>
-            <button class="tabs__tab" role="tab" id="tab-tea" aria-controls="panel-tea" aria-selected="false" tabindex="-1">Tea</button>
-            <button class="tabs__tab" role="tab" id="tab-food" aria-controls="panel-food" aria-selected="false" tabindex="-1">Food</button>
-            <button class="tabs__tab" role="tab" id="tab-cakes" aria-controls="panel-cakes" aria-selected="false" tabindex="-1">Cakes</button>
+            <button class="tabs__tab" role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="true">Drinks</button>
+            <button class="tabs__tab" role="tab" id="tab-breakfast" aria-controls="panel-breakfast" aria-selected="false" tabindex="-1">Breakfast</button>
+            <button class="tabs__tab" role="tab" id="tab-sandwiches" aria-controls="panel-sandwiches" aria-selected="false" tabindex="-1">Sandwiches</button>
+            <button class="tabs__tab" role="tab" id="tab-salads" aria-controls="panel-salads" aria-selected="false" tabindex="-1">Salads</button>
           </div>
 
-          <!-- Coffee -->
-          <div class="tabs__panel" role="tabpanel" id="panel-coffee" aria-labelledby="tab-coffee" tabindex="0">
-            <ul class="menu-list">
-              <li class="menu-item"><div class="menu-item__head"><h3>Flat White</h3><span class="menu-item__price">£3.30</span></div><p>Double ristretto with silky steamed milk. Our most-ordered drink.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Cappuccino</h3><span class="menu-item__price">£3.40</span></div><p>Espresso, steamed milk and a deep cap of foam, dusted with cocoa.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Latte</h3><span class="menu-item__price">£3.50</span></div><p>Smooth and milky. Add vanilla, caramel or hazelnut for 40p.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Americano</h3><span class="menu-item__price">£2.90</span></div><p>Double espresso topped with hot water. Milk on the side if you like.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Batch Brew</h3><span class="menu-item__price">£2.70</span></div><p>Filter coffee from our guest bean, changes every couple of weeks.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Ruby's Mocha</h3><span class="menu-item__price">£3.80</span></div><p>Espresso with real melted dark chocolate and steamed milk.</p></li>
-            </ul>
-          </div>
+          <div class="menu-card">
+            <!-- Drinks -->
+            <div class="tabs__panel" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks" tabindex="0">
+              <div class="menu-cols">
+                <div>
+                  <h3 class="menu-group">Hot</h3>
+                  <ul class="menu-list">
+                    <li class="menu-item"><h4>Latte</h4><span class="menu-item__price">£3.50</span></li>
+                    <li class="menu-item"><h4>Flat White</h4><span class="menu-item__price">£3.50</span></li>
+                    <li class="menu-item"><h4>Cappuccino</h4><span class="menu-item__price">£3.50</span></li>
+                    <li class="menu-item"><h4>Americano</h4><span class="menu-item__price">£3.00</span></li>
+                    <li class="menu-item"><h4>Espresso</h4><span class="menu-item__price">£1.50</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="menu-group">Cold</h3>
+                  <ul class="menu-list">
+                    <li class="menu-item"><h4>Iced Coffee</h4><span class="menu-item__price">£3.50</span></li>
+                    <li class="menu-item"><h4>Bottled Water</h4><span class="menu-item__price">£1.00</span></li>
+                    <li class="menu-item"><h4>San Pellegrino</h4><span class="menu-item__price">£2.50</span></li>
+                    <li class="menu-item"><h4>Cans</h4><span class="menu-item__price">£1.50</span></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="menu-note">
+                <svg class="beans" viewBox="0 0 60 40" aria-hidden="true"><ellipse cx="16" cy="22" rx="12" ry="8" transform="rotate(-25 16 22)"/><path d="M7 26c6-2 12-6 18-9"/><ellipse cx="42" cy="16" rx="11" ry="7" transform="rotate(20 42 16)"/><path d="M32 13c6 2 12 4 19 6"/></svg>
+                <span>Alternative milks: oat, almond, soy.<br>Syrups: caramel, hazelnut, vanilla, Irish cream and more.</span>
+              </p>
+            </div>
 
-          <!-- Tea -->
-          <div class="tabs__panel" role="tabpanel" id="panel-tea" aria-labelledby="tab-tea" tabindex="0" hidden>
-            <ul class="menu-list">
-              <li class="menu-item"><div class="menu-item__head"><h3>Breakfast Tea</h3><span class="menu-item__price">£2.40</span></div><p>Strong, malty loose-leaf blend. Builder's or delicate, you decide.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Earl Grey</h3><span class="menu-item__price">£2.60</span></div><p>Black tea with bergamot and cornflower petals.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Fresh Mint</h3><span class="menu-item__price">£2.50</span></div><p>A big handful of fresh mint leaves. Simple and soothing.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Chai Latte</h3><span class="menu-item__price">£3.40</span></div><p>Spiced chai with steamed milk and a sprinkle of cinnamon.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Matcha Latte</h3><span class="menu-item__price">£3.70</span></div><p>Ceremonial-grade matcha whisked with your choice of milk.</p></li>
-            </ul>
-          </div>
+            <!-- Breakfast -->
+            <div class="tabs__panel" role="tabpanel" id="panel-breakfast" aria-labelledby="tab-breakfast" tabindex="0" hidden>
+              <h3 class="menu-group">Available all day</h3>
+              <ul class="menu-list">
+                <li class="menu-item"><h4>Toast</h4><span class="menu-item__price">£1.20</span></li>
+                <li class="menu-item"><h4>Toasted Bagel</h4><span class="menu-item__price">£1.20</span></li>
+                <li class="menu-item"><h4>Crumpets</h4><span class="menu-item__price">£1.20</span><p>All served with butter or jam</p></li>
+                <li class="menu-item"><h4>Pastries</h4><span class="menu-item__price">£1.60</span></li>
+                <li class="menu-item"><h4>Proper Greek Yogurt</h4><span class="menu-item__price">£3.50</span><p>Choose 3 from granola, chia seeds, strawberries, blueberries, banana, peanut butter, honey</p></li>
+              </ul>
+            </div>
 
-          <!-- Food -->
-          <div class="tabs__panel" role="tabpanel" id="panel-food" aria-labelledby="tab-food" tabindex="0" hidden>
-            <ul class="menu-list">
-              <li class="menu-item"><div class="menu-item__head"><h3>Sourdough Toast</h3><span class="menu-item__price">£3.50</span></div><p>Two thick slices with butter and jam or marmite. (V)</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Smashed Avocado</h3><span class="menu-item__price">£7.50</span></div><p>On sourdough with chilli, lime and seeds. Add a poached egg for £1.50. (VG)</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Bacon Bap</h3><span class="menu-item__price">£5.50</span></div><p>Smoked back bacon from the local butcher in a soft floury bap.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Cheese &amp; Ham Toastie</h3><span class="menu-item__price">£6.20</span></div><p>Mature cheddar, honey-roast ham and a little mustard, grilled till golden.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Soup of the Day</h3><span class="menu-item__price">£5.80</span></div><p>Homemade and seasonal, served with buttered bread. Ask what's on. (V)</p></li>
-            </ul>
-          </div>
+            <!-- Sandwiches & toasties -->
+            <div class="tabs__panel" role="tabpanel" id="panel-sandwiches" aria-labelledby="tab-sandwiches" tabindex="0" hidden>
+              <div class="menu-cols">
+                <div>
+                  <h3 class="menu-group">Cold</h3>
+                  <ul class="menu-list">
+                    <li class="menu-item"><h4>The Tuna Butty</h4><span class="menu-item__price">£4.95</span><p>tuna, lettuce, cucumber, spicy mayo</p></li>
+                    <li class="menu-item"><h4>The Cajun</h4><span class="menu-item__price">£4.95</span><p>cajun chicken, lettuce, cucumber, red onion</p></li>
+                    <li class="menu-item"><h4>The Classic</h4><span class="menu-item__price">£4.95</span><p>ham, lettuce, tomato, cucumber</p></li>
+                    <li class="menu-item"><h4>Tony’s Favourite</h4><span class="menu-item__price">£5.50</span><p>mature cheddar, Branston pickle, lettuce, tomato, mustard</p></li>
+                    <li class="menu-item"><h4>The New Yorker</h4><span class="menu-item__price">£6.50</span><p>pastrami, cheese, gherkins, spinach, mustard</p></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="menu-group">Toasties</h3>
+                  <ul class="menu-list">
+                    <li class="menu-item"><h4>The Melt</h4><span class="menu-item__price">£4.95</span><p>tuna, cheese</p></li>
+                    <li class="menu-item"><h4>The Classics</h4><span class="menu-item__price">£4.95</span><p>cheese &amp; ham or cheese &amp; onion</p></li>
+                    <li class="menu-item"><h4>The Chorizo Cheese</h4><span class="menu-item__price">£6.50</span><p>chorizo, brie, red onion, chilli jam</p></li>
+                    <li class="menu-item"><h4>The New Yorker</h4><span class="menu-item__price">£6.50</span><p>pastrami, cheese, gherkins, spinach, mustard</p></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="menu-note"><span>Vegan cheese available.</span></p>
+            </div>
 
-          <!-- Cakes -->
-          <div class="tabs__panel" role="tabpanel" id="panel-cakes" aria-labelledby="tab-cakes" tabindex="0" hidden>
-            <ul class="menu-list">
-              <li class="menu-item"><div class="menu-item__head"><h3>Lemon Drizzle</h3><span class="menu-item__price">£3.20</span></div><p>Zingy, sticky and a local legend. Usually gone by 2pm.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Chocolate Brownie</h3><span class="menu-item__price">£3.00</span></div><p>Fudgy in the middle, crackly on top. Gluten-free.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Carrot Cake</h3><span class="menu-item__price">£3.40</span></div><p>Spiced sponge with walnuts and a thick cream cheese frosting.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Cinnamon Bun</h3><span class="menu-item__price">£3.10</span></div><p>Soft, swirly and glazed while still warm from the oven.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Scone &amp; Jam</h3><span class="menu-item__price">£2.90</span></div><p>Plain or fruit, with clotted cream and strawberry jam.</p></li>
-              <li class="menu-item"><div class="menu-item__head"><h3>Vegan Banana Bread</h3><span class="menu-item__price">£2.80</span></div><p>Moist, lightly spiced and lovely toasted with a little butter. (VG)</p></li>
-            </ul>
+            <!-- Salads -->
+            <div class="tabs__panel" role="tabpanel" id="panel-salads" aria-labelledby="tab-salads" tabindex="0" hidden>
+              <h3 class="visually-hidden">Salads</h3>
+              <ul class="menu-list">
+                <li class="menu-item"><h4>Feta Salad</h4><span class="menu-item__price">£5.95</span><p>feta, red pepper, spinach, tomato, cucumber</p></li>
+                <li class="menu-item"><h4>Cajun Salad</h4><span class="menu-item__price">£5.95</span><p>cajun chicken, lettuce, cucumber, peppers, tomato, sweetcorn</p></li>
+                <li class="menu-item"><h4>Cheese Ploughman’s</h4><span class="menu-item__price">£5.95</span><p>mature cheddar, salad leaves, pickled onion, Branston pickle, tomato</p></li>
+              </ul>
+            </div>
+
+            <!-- Line drawing in the style of the printed menus -->
+            <svg class="menu-doodle" viewBox="0 0 120 120" aria-hidden="true">
+              <path d="M52 22c-6 6 6 10 0 16M64 18c-6 7 6 11 0 18M76 22c-6 6 6 10 0 16"/>
+              <path d="M24 48h76l-8 46a10 10 0 0 1-10 8H42a10 10 0 0 1-10-8z"/>
+              <path d="M98 58c14 0 16 22 0 24"/>
+              <path d="M16 108h92"/>
+            </svg>
           </div>
         </div>
 
-        <p class="menu__note">V = vegetarian, VG = vegan. Please tell us about any allergies. We're happy to help.</p>
+        <p class="menu__footnote">Please tell us about any allergies. We're happy to help.</p>
       </div>
     </section>
 
@@ -198,14 +257,14 @@
           <p class="eyebrow">A peek inside</p>
           <h2 id="gallery-title">Life at Ruby's</h2>
         </header>
-        <!-- Replace each placeholder with <img src="..." alt="..." loading="lazy" width="..." height="..."> -->
+        <!-- Replace each placeholder with <img src="images/..." alt="..." loading="lazy" width="..." height="..."> -->
         <ul class="gallery__grid">
-          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: a flat white with rosetta latte art on a wooden table"><span>Flat white</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: cosy corner seating with cushions and plants"><span>Cosy corner</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: a tray of freshly baked cinnamon buns"><span>Cinnamon buns</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: an iced latte in a tall glass by the window"><span>Iced latte</span></li>
-          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: the counter with cakes on stands and the chalkboard menu"><span>The counter</span></li>
-          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: a slice of lemon drizzle cake with a pot of tea"><span>Lemon drizzle</span></li>
+          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: a flat white with latte art"><span>Flat white</span></li>
+          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: the counter at Ruby's"><span>The counter</span></li>
+          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: a chorizo and brie toastie"><span>Toasties</span></li>
+          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: an iced coffee"><span>Iced coffee</span></li>
+          <li class="photo-placeholder gallery__item gallery__item--tall reveal" role="img" aria-label="Placeholder: the bar on a Friday evening"><span>Friday nights</span></li>
+          <li class="photo-placeholder gallery__item reveal" role="img" aria-label="Placeholder: the shop front on Partington Lane"><span>The shop front</span></li>
         </ul>
       </div>
     </section>
@@ -215,38 +274,47 @@
       <div class="container visit__grid">
         <div class="visit__info reveal">
           <p class="eyebrow">Come and see us</p>
-          <h2 id="visit-title">Hours &amp; location</h2>
+          <h2 id="visit-title">Opening times</h2>
 
-          <!-- Keep these in sync with OPENING_HOURS in js/main.js and the schema above -->
+          <!-- Keep in sync with OPENING_HOURS in js/main.js and the schema in <head> -->
           <table class="hours">
-            <caption class="visually-hidden">Opening hours</caption>
+            <caption class="visually-hidden">Coffee shop and bar opening times</caption>
+            <thead>
+              <tr><th scope="col"><span class="visually-hidden">Day</span></th><th scope="col">Coffee shop</th><th scope="col">Bar</th></tr>
+            </thead>
             <tbody>
-              <tr data-day="1"><th scope="row">Monday</th><td>7:30am – 5:00pm</td></tr>
-              <tr data-day="2"><th scope="row">Tuesday</th><td>7:30am – 5:00pm</td></tr>
-              <tr data-day="3"><th scope="row">Wednesday</th><td>7:30am – 5:00pm</td></tr>
-              <tr data-day="4"><th scope="row">Thursday</th><td>7:30am – 5:00pm</td></tr>
-              <tr data-day="5"><th scope="row">Friday</th><td>7:30am – 5:00pm</td></tr>
-              <tr data-day="6"><th scope="row">Saturday</th><td>8:30am – 5:00pm</td></tr>
-              <tr data-day="0"><th scope="row">Sunday</th><td>9:30am – 3:00pm</td></tr>
+              <tr data-day="1"><th scope="row">Monday</th><td class="is-shut">Closed</td><td class="is-shut">Closed</td></tr>
+              <tr data-day="2"><th scope="row">Tuesday</th><td>8am – 4pm</td><td class="is-shut">–</td></tr>
+              <tr data-day="3"><th scope="row">Wednesday</th><td>8am – 4pm</td><td class="is-shut">–</td></tr>
+              <tr data-day="4"><th scope="row">Thursday</th><td>8am – 4pm</td><td class="is-shut">–</td></tr>
+              <tr data-day="5"><th scope="row">Friday</th><td>8am – 2pm</td><td>4pm – 10pm</td></tr>
+              <tr data-day="6"><th scope="row">Saturday</th><td class="is-shut">–</td><td>4pm – 10pm</td></tr>
+              <tr data-day="0"><th scope="row">Sunday</th><td class="is-shut">–</td><td>3pm – 9pm</td></tr>
             </tbody>
           </table>
 
           <address class="visit__address">
             <strong>Ruby's Coffee Shop</strong><br>
-            12 High Street<br>
-            Your Town, AB1 2CD<br>
-            <a href="tel:+441234567890">01234 567890</a>
+            125 Partington Lane<br>
+            Swinton
+            <!-- TODO: add postcode above, and phone number here, e.g.
+                 <br><a href="tel:+44161XXXXXXX">0161 XXX XXXX</a>
+                 (also add "telephone" to the schema in <head>) -->
           </address>
+          <p class="visit__contact">Got a question? Message us on <a href="https://www.instagram.com/rubyscoffeeshop/" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
 
-          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=Ruby%27s+Coffee+Shop+12+High+Street+Your+Town" target="_blank" rel="noopener">
+          <a class="btn btn--primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=125+Partington+Lane,+Swinton" target="_blank" rel="noopener">
             Get directions<span class="visually-hidden"> (opens Google Maps in a new tab)</span>
           </a>
         </div>
 
-        <!-- Map placeholder: swap for a Google Maps <iframe title="Map showing Ruby's Coffee Shop" loading="lazy" ...> -->
-        <div class="map-placeholder reveal" role="img" aria-label="Map placeholder showing the shop's location on the High Street">
-          <span class="map-placeholder__pin" aria-hidden="true"></span>
-          <span class="map-placeholder__label">Map coming soon</span>
+        <!-- Embedded Google Map (no API key needed) -->
+        <div class="map reveal">
+          <iframe
+            title="Map showing Ruby's Coffee Shop, 125 Partington Lane, Swinton"
+            src="https://www.google.com/maps?q=125+Partington+Lane,+Swinton&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -258,27 +326,27 @@
           <p class="eyebrow">Kind words</p>
           <h2 id="reviews-title">What locals say</h2>
         </header>
-        <!-- Placeholder reviews: replace with real (permitted) customer quotes -->
+        <!-- PLACEHOLDER REVIEWS: replace with real customer quotes (with their permission) before going live -->
         <ul class="reviews__grid">
           <li class="card review reveal">
             <figure>
               <p class="review__stars" aria-label="5 out of 5 stars">★★★★★</p>
-              <blockquote><p>"Best flat white in town, hands down. The team remember my order and always have a chat. It's my favourite part of the morning."</p></blockquote>
-              <figcaption>Sarah M.</figcaption>
+              <blockquote><p>“Lovely little spot. The flat white is spot on and the chorizo and brie toastie is unreal.”</p></blockquote>
+              <figcaption>Placeholder review</figcaption>
             </figure>
           </li>
           <li class="card review reveal">
             <figure>
               <p class="review__stars" aria-label="5 out of 5 stars">★★★★★</p>
-              <blockquote><p>"The lemon drizzle is dangerous. Lovely cosy spot to work from for a couple of hours, and they're really dog friendly."</p></blockquote>
-              <figcaption>Tom R.</figcaption>
+              <blockquote><p>“Exactly what Partington Lane needed. Friendly faces, good coffee and a great Friday night.”</p></blockquote>
+              <figcaption>Placeholder review</figcaption>
             </figure>
           </li>
           <li class="card review reveal">
             <figure>
               <p class="review__stars" aria-label="5 out of 5 stars">★★★★★</p>
-              <blockquote><p>"Such a warm, friendly little café. Great vegan options and the cinnamon buns are worth getting up early for."</p></blockquote>
-              <figcaption>Priya K.</figcaption>
+              <blockquote><p>“Greek yogurt with all the toppings for £3.50? My new mid-week treat.”</p></blockquote>
+              <figcaption>Placeholder review</figcaption>
             </figure>
           </li>
         </ul>
@@ -289,14 +357,14 @@
     <section class="section contact" id="contact" aria-labelledby="contact-title">
       <div class="container contact__inner reveal">
         <p class="eyebrow">Stay in the loop</p>
-        <h2 id="contact-title">Fancy a little post?</h2>
-        <p>New bakes, guest coffees and the odd event, sent once a month. No spam, promise.</p>
+        <h2 id="contact-title">Hear it first</h2>
+        <p>New menus, opening times and what's on at the bar. Just the good stuff, no spam.</p>
 
         <!-- Front-end only: connect the action to Mailchimp, Buttondown, etc. -->
         <form class="newsletter" action="#" method="post" novalidate>
           <label for="email" class="visually-hidden">Email address</label>
           <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="newsletter-msg">
-          <button type="submit" class="btn btn--primary">Sign me up</button>
+          <button type="submit" class="btn btn--light">Sign me up</button>
         </form>
         <p class="newsletter__msg" id="newsletter-msg" role="status"></p>
 
@@ -304,6 +372,7 @@
           <li><a href="https://www.instagram.com/rubyscoffeeshop/" target="_blank" rel="noopener">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
             Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+          <!-- TODO: check this is Ruby's real Facebook page -->
           <li><a href="https://www.facebook.com/rubyscoffeeshop" target="_blank" rel="noopener">
             <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8z" fill="currentColor"/></svg>
             Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>
@@ -316,12 +385,16 @@
   <footer class="site-footer">
     <div class="container footer__grid">
       <div>
-        <p class="footer__logo">Ruby's</p>
-        <p>12 High Street, Your Town</p>
+        <p class="footer__logo">Ruby’s</p>
+        <p>125 Partington Lane, Swinton</p>
       </div>
       <div>
-        <h2 class="footer__heading">Opening hours</h2>
-        <p>Mon–Fri 7:30am–5pm<br>Sat 8:30am–5pm<br>Sun 9:30am–3pm</p>
+        <h2 class="footer__heading">Coffee shop</h2>
+        <p>Tue–Thu 8am–4pm<br>Fri 8am–2pm</p>
+      </div>
+      <div>
+        <h2 class="footer__heading">Bar</h2>
+        <p>Fri &amp; Sat 4pm–10pm<br>Sun 3pm–9pm</p>
       </div>
       <div>
         <h2 class="footer__heading">Follow along</h2>
@@ -331,7 +404,7 @@
         </p>
       </div>
     </div>
-    <p class="footer__copy container">© <span data-year>2026</span> Ruby's Coffee Shop. Made with love (and caffeine).</p>
+    <p class="footer__copy container">© <span data-year>2026</span> Ruby's Coffee Shop, Swinton. Closed Mondays.</p>
   </footer>
 
   <script src="js/main.js" defer></script>
