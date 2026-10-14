@@ -153,27 +153,20 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); }
 
-/* Image placeholders in brand colours. Swap for real <img> elements. */
-.photo-placeholder {
-  position: relative;
-  display: grid;
-  place-items: end start;
+/* Photo frames: images fill their box and crop neatly */
+.about__photo,
+.gallery__item {
+  margin: 0;
   overflow: hidden;
   border-radius: var(--radius);
-  background:
-    radial-gradient(circle at 30% 25%, rgba(245, 230, 200, 0.25), transparent 60%),
-    linear-gradient(135deg, #9a1416, var(--ruby-dark));
+  background: var(--line);           /* shown while the image loads */
 }
-.photo-placeholder span {
-  margin: 0.75rem;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ruby);
-  background: var(--cream);
-  border-radius: 999px;
+.about__photo img,
+.gallery__item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Open / closed pill (cream so it reads on the red hero) */
@@ -314,15 +307,16 @@ ul { margin: 0; padding: 0; list-style: none; }
   isolation: isolate;
 }
 
-/* Ruby red like the Instagram posts. To use a photo instead:
-   background: linear-gradient(rgba(91,10,7,.75), rgba(91,10,7,.75)),
-               url("../images/hero.jpg") center / cover; */
+/* Ruby red like the Instagram posts, with the shop window photo faintly
+   showing through. Lower the 0.88 alpha to let more of the photo through. */
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(ellipse at 50% 35%, #8e0b0c 0%, transparent 65%),
+    radial-gradient(ellipse at 50% 35%, rgba(142, 11, 12, 0.6) 0%, transparent 65%),
+    linear-gradient(rgba(122, 0, 1, 0.88), rgba(122, 0, 1, 0.88)),
+    url("../images/shop-window.jpg") center 40% / cover,
     var(--ruby);
 }
 
@@ -366,7 +360,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- 6. About ---------- */
 .about__grid { display: grid; gap: 2.5rem; align-items: center; }
-.about__photo { aspect-ratio: 4 / 5; max-height: 520px; }
+.about__photo { aspect-ratio: 4 / 5; max-height: 560px; }
 
 .about__points li {
   position: relative;
@@ -495,16 +489,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   grid-auto-rows: 160px;
   gap: 0.75rem;
 }
-.gallery__item { transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease); }
-.gallery__item:hover { transform: scale(1.02); box-shadow: var(--shadow-lift); }
+.gallery__item { transition: box-shadow 0.35s var(--ease); }
+.gallery__item img { transition: transform 0.5s var(--ease); }
+.gallery__item:hover { box-shadow: var(--shadow-lift); }
+.gallery__item:hover img { transform: scale(1.05); }
 .gallery__item--tall { grid-row: span 2; }
-
-/* Vary placeholder tones so the grid doesn't look flat */
-.gallery__item:nth-child(2) { background: linear-gradient(135deg, #e9d8b8, #cdb48c); }
-.gallery__item:nth-child(3) { background: linear-gradient(135deg, #7a0001, #3a0001); }
-.gallery__item:nth-child(4) { background: linear-gradient(135deg, #5d7a72, #2c4741); }
-.gallery__item:nth-child(5) { background: linear-gradient(135deg, #4d0001, #1f0001); }
-.gallery__item:nth-child(6) { background: linear-gradient(135deg, #f1e3c8, #d7bf96); }
 
 /* ---------- 9. Visit (hours + location) ---------- */
 .visit { background: var(--linen); }
