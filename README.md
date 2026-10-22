@@ -1,6 +1,6 @@
 # Ruby's Coffee Shop website
 
-A responsive, single-page site for Ruby's Coffee Shop & Bar, 125 Partington Lane, Swinton, Manchester M27 0NS.
+A responsive, single-page site for Ruby's Coffee Shop & Bar.
 
 Live at https://james431256.github.io/coffee-shop-test/ (served from the `gh-pages` branch).
 Plain HTML, CSS and vanilla JS, with no build step. The branding, menu and opening times come from [@rubyscoffeeshop](https://www.instagram.com/rubyscoffeeshop/).
